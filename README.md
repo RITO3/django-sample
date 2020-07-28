@@ -22,7 +22,29 @@ $ python manage.py startapp app
 
 templateフォルダの作成
 
+## フォルダ構成
 
+```shell
+.
+└── server
+    ├── app
+    │   ├── migrations
+    │   └── template
+    └── config
+```
+
+## 開発環境
+Remote-Containersを使用する.
+
+使用したイメージ: mcr.microsoft.com/vscode/devcontainers/python:3.8
+
+## デバッグ
+
+### 開発サーバの起動
+
+```shell
+$ python manage.py runserver
+```
 
 ## gitignoreの追加
 djangoとpythonとVisual Studio Code
