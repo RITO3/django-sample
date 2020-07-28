@@ -12,7 +12,7 @@ $ python -m pip install Django
 ```
 
 Djangoプロジェクトを作成する。
-アプリケーション名は```backend```にした。
+アプリケーション名は```app```にした。
 
 ```shell
 $ cd server
