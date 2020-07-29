@@ -15,6 +15,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 #    && rm -rf /tmp/pip-tmp
 
+RUN pip install pipenv==2020.6.2
+
 # [Optional] Uncomment this section to install additional packages.
 #
 # RUN apt-get update \
