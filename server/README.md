@@ -6,6 +6,7 @@
 
 [クイックインストールガイド](https://docs.djangoproject.com/ja/3.0/intro/install/#verifying)
 
+※pipenvをインストールする前のコマンド
 
 ```shell
 $ python -m pip install Django
