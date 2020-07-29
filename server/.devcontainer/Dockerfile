@@ -15,7 +15,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 #    && rm -rf /tmp/pip-tmp
 
+# pipenvのインストール
 RUN pip install pipenv==2020.6.2
+
+# プロジェクトの直下に仮想環境を作る
+ENV PIPENV_VENV_IN_PROJECT=1
 
 # [Optional] Uncomment this section to install additional packages.
 #

@@ -35,15 +35,20 @@ templateフォルダの作成
 ```
 
 ## パッケージ管理
-pipenvでバージョン管理する.
+pipenvでパッケージを管理する.
+インストール処理はDockerfileに記述する.
 
-
-pipenvをインストールする
+pipenvをインストールする.
 
 ```shell
 $ pip install pipenv==2020.6.2
 ```
 
+プロジェクトの直下に仮想環境を作るため、以下の環境変数も設定する.
+
+```shell
+ENV PIPENV_VENV_IN_PROJECT=1
+```
 
 
 ## 開発環境
