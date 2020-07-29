@@ -54,7 +54,7 @@ ENV PIPENV_VENV_IN_PROJECT=1
 ## 開発環境
 Remote-Containersを使用する.
 
-使用したイメージ: mcr.microsoft.com/vscode/devcontainers/python:3.8
+使用したイメージ: ```mcr.microsoft.com/vscode/devcontainers/python:3.8```
 
 ## デバッグ
 
