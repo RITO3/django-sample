@@ -66,12 +66,31 @@ $ python manage.py runserver
 
 初回のみ、以下のコマンドを実行して、Pipfileを作成する。
 
-```
-pipenv install --python 3.8
+```shell
+$ pipenv install --python 3.8
 ```
 
 デバッグ時にはコンテナ上で仮想環境を作成し、実際に動作させるときには、```--system```オプションをつける.
 
+## Linterの導入
+
+```flake8```と```black```をインストールする.
+設定を```.flake8```ファイルに記述する.
+
+以下のコマンドを実行して、インストールする.
+
+```shell
+$ pipenv install -d flake8
+$ pipenv install -d --pre black # ★--preがないとインストールでエラーが起きる.
+```
+
+blackの設定は```pyproject.toml```に記述する.
+
+
+
+## コマンドの登録
+
+Pipfileに```[scripts]```を記述することで、コマンドを実行することができる.
 
 
 ## gitignoreの追加
@@ -87,3 +106,8 @@ https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,django
 - [きたない requirements.txt から Pipenv への移行](https://www.kabuku.co.jp/developers/python-pipenv-graph)
 - [pipenvとGitとDockerを使ったPython開発フロー](https://qiita.com/Aruneko/items/796d7eeb61e1f36ae4a0)
 - [あえてdockerにpipenv環境を作る](https://qiita.com/nassy20/items/3724aeda49238f965fb1)
+- [Pipenvでnpm-scriptsみたいにPipfileへコマンドを書く](https://qiita.com/toto1310/items/a8ab8391bc8169721b4f)
+- [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html)
+- [開発を効率的に進めるためのツール設定](https://logmi.jp/tech/articles/322611)
+- [black](https://github.com/psf/black)
+- [もうPythonの細かい書き方で議論しない。blackで自動フォーマットしよう](https://blog.hirokiky.org/entry/2019/06/03/202745)

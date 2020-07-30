@@ -1,8 +1,21 @@
 {
+    "python.venvPath": ".venv",
+    "python.autoComplete.extraPaths": [
+        ".venv/lib/python3.8/site-packages",
+    ],
+    "python.formatting.autopep8Path": ".venv/bin/autopep8",
+    "python.formatting.blackPath": ".venv/bin/black",
+    "python.formatting.yapfPath": ".venv/bin/yapf",
+    "python.linting.banditPath": ".venv/bin/bandit",
+    "python.linting.flake8Path": ".venv/bin/flake8",
+    "python.linting.mypyPath": ".venv/bin/mypy",
+    "python.linting.pycodestylePath": ".venv/bin/pycodestyle",
+    "python.linting.pydocstylePath": ".venv/bin/pydocstyle",
+    "python.linting.pylintPath": ".venv/bin/pylint",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
-    "python.formatting.provider": "autopep8",
+    "python.formatting.provider": "black",
     "editor.formatOnSave": true
 }
