@@ -111,3 +111,4 @@ https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,django
 - [開発を効率的に進めるためのツール設定](https://logmi.jp/tech/articles/322611)
 - [black](https://github.com/psf/black)
 - [もうPythonの細かい書き方で議論しない。blackで自動フォーマットしよう](https://blog.hirokiky.org/entry/2019/06/03/202745)
+- [flake8 error E231 after a successful black run #1289](https://github.com/psf/black/issues/1289)
