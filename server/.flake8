@@ -1,6 +1,9 @@
 [flake8]
 
-ignore = E501
+ignore = 
+    E501,
+    E231 ; GitHub Issues #1289 https://github.com/psf/black/issues/1289
+
 
 exclude = 
     .git,
