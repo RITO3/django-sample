@@ -86,6 +86,24 @@ $ pipenv install -d --pre black # ★--preがないとインストールでエ�
 
 blackの設定は```pyproject.toml```に記述する.
 
+## テストの導入
+
+標準ライブラリ```unittest```を使用する.
+テストレポートをJUnit形式で出力させるには、```unittest-xml-reporting```を使用する.
+
+```shell
+$ pipenv install -d unittest-xml-reporting
+```
+
+**unittest_runner.py**にテストの設定(テスト結果の出力先など)を記述する.
+
+カバレッジの計測は```coverage```を導入する.
+
+```shell
+$ pipenv install -d coverage
+```
+
+```coverage```の設定は、**.coveragerc**に記述する.
 
 
 ## コマンドの登録
@@ -112,3 +130,6 @@ https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,django
 - [black](https://github.com/psf/black)
 - [もうPythonの細かい書き方で議論しない。blackで自動フォーマットしよう](https://blog.hirokiky.org/entry/2019/06/03/202745)
 - [flake8 error E231 after a successful black run #1289](https://github.com/psf/black/issues/1289)
+- [unittest-xml-reporting (aka xmlrunner)](https://github.com/xmlrunner/unittest-xml-reporting)
+- [カウボーイには嫌がられるPythonの話](https://qiita.com/mima_ita/items/cabcf014aa08e27c8de7)
+- [Configuration reference](https://coverage.readthedocs.io/en/coverage-5.2.1/config.html)
