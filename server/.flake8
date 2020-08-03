@@ -13,4 +13,5 @@ exclude =
     wsgi.py,
     old,
     build,
-    dist
+    dist,
+    __init__.py
