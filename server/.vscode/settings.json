@@ -17,5 +17,16 @@
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
     "python.formatting.provider": "black",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "python.testing.unittestEnabled": true,
+    "pythonTestExplorer.testFramework": "unittest",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false
 }
