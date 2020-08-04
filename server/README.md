@@ -35,7 +35,7 @@ templateフォルダの作成
 ```
 
 ## パッケージ管理
-pipenvでパッケージを管理する.
+```pipenv```でパッケージを管理する.
 インストール処理はDockerfileに記述する.
 
 pipenvをインストールする.
@@ -52,9 +52,12 @@ ENV PIPENV_VENV_IN_PROJECT=1
 
 
 ## 開発環境
+
 Remote-Containersを使用する.
 
 使用したイメージ: ```mcr.microsoft.com/vscode/devcontainers/python:3.8```
+
+Remote-Containersの使用有無に関係せずに、同じ開発環境の設定を使用できるように、**devcontainer.json**には設定を記載せずに、settings.jsonを記述する.
 
 ## デバッグ
 
@@ -64,13 +67,13 @@ Remote-Containersを使用する.
 $ python manage.py runserver
 ```
 
-初回のみ、以下のコマンドを実行して、Pipfileを作成する。
+初回のみ、以下のコマンドを実行して、**Pipfile**を作成する。
 
 ```shell
 $ pipenv install --python 3.8
 ```
 
-デバッグ時にはコンテナ上で仮想環境を作成し、実際に動作させるときには、```--system```オプションをつける.
+開発時にはコンテナ上で仮想環境を作成し、CIを回すときは、実際に動作させるときには、```--system```オプションをつける.
 
 ## Linterの導入
 
@@ -84,7 +87,7 @@ $ pipenv install -d flake8
 $ pipenv install -d --pre black # ★--preがないとインストールでエラーが起きる.
 ```
 
-blackの設定は```pyproject.toml```に記述する.
+blackの設定(除外対象など)は```pyproject.toml```に記述する.
 
 ## テストの導入
 
@@ -104,6 +107,10 @@ $ pipenv install -d coverage
 ```
 
 ```coverage```の設定は、**.coveragerc**に記述する.
+
+**omit**パラメータにカバレッジ計測対象外のフォルダを指定する.
+除外の設定をしないと、**.venv**内のソースコードに対してもカバレッジの計測が行われる.
+
 
 
 ## コマンドの登録
