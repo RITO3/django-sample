@@ -89,6 +89,15 @@ $ pipenv install -d --pre black # ★--preがないとインストールでエ�
 
 blackの設定(除外対象など)は```pyproject.toml```に記述する.
 
+## ドキュメント
+
+ドキュメントのスタイルチェックを行う```pydocstyle```と```flake8-docstrings```を使用する.
+
+```shell
+$ pipenv install -d pydocstyle
+$ pipenv install -d flake8-docstrings
+```
+
 ## テストの導入
 
 標準ライブラリ```unittest```を使用する.
@@ -140,3 +149,4 @@ https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,django
 - [unittest-xml-reporting (aka xmlrunner)](https://github.com/xmlrunner/unittest-xml-reporting)
 - [カウボーイには嫌がられるPythonの話](https://qiita.com/mima_ita/items/cabcf014aa08e27c8de7)
 - [Configuration reference](https://coverage.readthedocs.io/en/coverage-5.2.1/config.html)
+- [Pythonのコード改善のためのツール5つを試してみた](https://minus9d.hatenablog.com/entry/2018/10/22/235604)
