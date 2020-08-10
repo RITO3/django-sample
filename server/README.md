@@ -89,6 +89,11 @@ $ pipenv install -d --pre black # ★--preがないとインストールでエ�
 
 blackの設定(除外対象など)は```pyproject.toml```に記述する.
 
+
+```black```でフォーマットしたコードに**E231**の指摘がでるため、除外する.
+
+GitHub Issues #1289 https://github.com/psf/black/issues/1289
+
 ## ドキュメント
 
 ドキュメントのスタイルチェックを行う```pydocstyle```と```flake8-docstrings```を使用する.
@@ -97,6 +102,9 @@ blackの設定(除外対象など)は```pyproject.toml```に記述する.
 $ pipenv install -d pydocstyle
 $ pipenv install -d flake8-docstrings
 ```
+
+テストケース名を記述したとき(関数のドキュメント)に、空行がないと**D202**のエラーがでたため、除外した.
+
 
 ## テストの導入
 
