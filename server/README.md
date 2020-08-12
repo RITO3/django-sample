@@ -63,7 +63,7 @@ Remote-Containers の使用有無に関係せずに、同じ開発環境の設�
 
 複数のコンテナ(Web アプリ用と DB コンテナ用)を使用するため、コンテナの定義を**docker-compose.yml**に記述する.
 
-**devcontainer.json**は、直接 Dockerfile を読み込まずに、**docker-compose.yml**を読み込むように設定を変更する.
+**devcontainer.json**では、直接 Dockerfile を読み込まずに、**docker-compose.yml**を読み込むように設定を変更する.
 
 **Dockerfile**を読み込む処理を無効化.
 
