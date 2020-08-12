@@ -59,6 +59,44 @@ Remote-Containersを使用する.
 
 Remote-Containersの使用有無に関係せずに、同じ開発環境の設定を使用できるように、**devcontainer.json**には設定を記載せずに、settings.jsonを記述する.
 
+
+### PostgreSQLコンテナを使用する場合
+
+複数のコンテナ(Webアプリ用とDBコンテナ用)を使用するため、コンテナの定義を**docker-compose.yml**に記述する.
+
+**devcontainer.json**は、直接Dockerfileを読み込まずに、**docker-compose.yml**を読み込むように設定を変更する.
+
+**Dockerfile**を読み込む処理を無効化.
+
+```json
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        // Update 'VARIANT' to pick a Python version. Rebuild the container 
+        // if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
+        "args": {
+     		"VARIANT": "3.8"
+     	}
+    }
+```
+
+ポートフォワーディングも**docker-compose.yml**に記述しているので、以下のコードを削除する.
+
+```json
+    "forwardPorts": [
+	    8000
+    ],
+```
+
+**docker-compose.yml**を読み込む.
+
+```json
+	"service": "app", // 接続するコンテナのラベル
+	"dockerComposeFile": "docker-compose.yml", // 読み込むdocker-compose.ymlファイルのパス
+```
+
+
+
 ## デバッグ
 
 ### 開発サーバの起動
@@ -129,10 +167,27 @@ $ pipenv install -d coverage
 除外の設定をしないと、**.venv**内のソースコードに対してもカバレッジの計測が行われる.
 
 
-
 ## コマンドの登録
 
 Pipfileに```[scripts]```を記述することで、コマンドを実行することができる.
+
+
+## DB処理
+
+DBのテーブル定義は以下のドキュメントを参考に作成する.
+
+[モデル](https://docs.djangoproject.com/ja/3.1/topics/db/models/)
+
+### PostgreSQL用の設定
+
+デフォルトでは、**SQLite3**を使用することになっているため、PostgreSQLを使用するように変更する.
+
+以下のドキュメントをもとに、セットアップする.
+
+[PostgreSQL notes](https://docs.djangoproject.com/ja/3.1/ref/databases/#postgresql-notes)
+
+```psycopg2```を使用する.
+
 
 
 ## gitignoreの追加
