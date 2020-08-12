@@ -88,8 +88,8 @@ Remote-Containers の使用有無に関係せずに、同じ開発環境の設�
 **docker-compose.yml**を読み込む.
 
 ```json
-	"service": "app", // 接続するコンテナのラベル
-	"dockerComposeFile": "docker-compose.yml", // 読み込むdocker-compose.ymlファイルのパス
+    "service": "app", // 接続するコンテナのラベル
+    "dockerComposeFile": "docker-compose.yml", // 読み込むdocker-compose.ymlファイルのパス
 ```
 
 ## デバッグ
